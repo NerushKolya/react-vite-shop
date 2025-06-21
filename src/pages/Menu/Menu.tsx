@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { type ChangeEvent, useEffect, useState } from 'react';
 import Headling from '../../components/Headling/Headling';
 import Search from '../../components/Search/Search';
 // import { PREFIX } from '../../helpers/API';
@@ -67,14 +67,14 @@ export function Menu() {
 	};
 	return <>
 		<div className={styles['head']}>
-			<Headling>Меню</Headling>
-			<Search placeholder='Введите блюдо или состав' onChange={updateFilter} />
+			<Headling>Menu</Headling>
+			<Search placeholder='Enter a dish or composition' onChange={updateFilter} />
 		</div>
 		<div>
 			{error && <>{error}</>}
 			{!isLoading && products.length > 0 && <MenuList products={products} />}
-			{isLoading && <>Загружаем продукты...</>}
-			{!isLoading && products.length === 0 && <>Не найдено блюд по запросу</>}
+			{isLoading && <>Loading products...</>}
+			{!isLoading && products.length === 0 && <>No dishes found matching your request</>}
 		</div>
 	</>;
 }

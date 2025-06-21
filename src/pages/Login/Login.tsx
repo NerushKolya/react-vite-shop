@@ -41,22 +41,22 @@ export function Login() {
 	};
 
 	return <div className={styles['login']}>
-		<Headling>Вход</Headling>
+		<Headling>Login</Headling>
 		{loginErrorMessage && <div className={styles['error']}>{loginErrorMessage}</div>}
 		<form className={styles['form']} onSubmit={submit}>
 			<div className={styles['field']}>
-				<label htmlFor="email">Ваш email</label>
+				<label htmlFor="email">Email</label>
 				<Input id="email" name='email' placeholder='Email' />
 			</div>
 			<div className={styles['field']}>
-				<label htmlFor="password">Ваш пароль</label>
+				<label htmlFor="password">Password</label>
 				<Input id="password" name='password' type="password" placeholder='Пароль' />
 			</div>
-			<Button appearence="big">Вход</Button>
+			<Button appearence="big">Logis</Button>
 		</form>
 		<div className={styles['links']}>
-			<div>Нет акканута?</div>
-			<Link to="/auth/register">Зарегистрироваться</Link>
+			<div>Don't have an account?</div>
+			<Link to="/auth/register">Register</Link>
 		</div>
 	</div>;
 }

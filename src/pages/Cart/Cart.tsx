@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Headling from '../../components/Headling/Headling';
-import { AppDispath, RootState } from '../../store/store';
+import type { AppDispath, RootState } from '../../store/store';
 import CartItem from '../../components/CartItem/CartItem';
 import { useEffect, useState } from 'react';
 import type { Product } from '../../interfaces/product.interface';
@@ -56,7 +56,7 @@ export function Cart() {
 	}, [items]);
 
 	return <>
-		<Headling className={styles['headling']}>Корзина</Headling>
+		<Headling className={styles['headling']}>Cart</Headling>
 		{items.map(i => {
 			const product = cartProducts.find(p => p.id === i.id);
 			if (!product) {
@@ -65,21 +65,21 @@ export function Cart() {
 			return <CartItem key={product.id} count={i.count} {...product} />;
 		})}
 		<div className={styles['line']}>
-			<div className={styles['text']}>Итог</div>
-			<div className={styles['price']}>{total}&nbsp;<span>₽</span></div>
+			<div className={styles['text']}>total</div>
+			<div className={styles['price']}>{total} <span>$</span></div>
 		</div>
 		<hr className={styles['hr']} />
 		<div className={styles['line']}>
-			<div className={styles['text']}>Доставка</div>
-			<div className={styles['price']}>{DELIVERY_FEE}&nbsp;<span>₽</span></div>
+			<div className={styles['text']}>Delivery</div>
+			<div className={styles['price']}>{DELIVERY_FEE} <span>$</span></div>
 		</div>
 		<hr className={styles['hr']} />
 		<div className={styles['line']}>
-			<div className={styles['text']}>Итог <span className={styles['total-count']}>({items.length})</span></div>
-			<div className={styles['price']}>{total + DELIVERY_FEE}&nbsp;<span>₽</span></div>
+			<div className={styles['text']}>total <span className={styles['total-count']}>({items.length})</span></div>
+			<div className={styles['price']}>{total + DELIVERY_FEE} <span>$</span></div>
 		</div>
 		<div className={styles['checkout']}>
-			<Button appearence="big" onClick={checkout}>оформить</Button>
+			<Button appearence="big" onClick={checkout}>Сheckout</Button>
 		</div>
 	</>;
 }

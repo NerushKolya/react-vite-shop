@@ -26,7 +26,7 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: '/',
-				element: <Suspense fallback={<>Загрузка...</>}><Menu /></Suspense>
+				element: <Suspense fallback={<>Loading...</>}><Menu /></Suspense>
 			},
 			{
 				path: '/success',
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
 			{
 				path: '/product/:id',
 				element: <Product />,
-				errorElement: <>Ошибка</>,
+				errorElement: <>Error</>,
 				loader: async ({ params }) => {
 					const data = mockProducts.find((item) => item.id === Number(params.id));
 					// const { data } = await axios.get(`${PREFIX}/products/${params.id}`);

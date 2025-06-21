@@ -25,18 +25,18 @@ function CartItem(props: CartItemProps) {
 			<div className={styles['image']} style={{ backgroundImage: `url('${props.image}')` }}></div>
 			<div className={styles['description']}>
 				<div className={styles['name']}>{props.name}</div>
-				<div className={styles['price']}>{props.price}&nbsp;₽</div>
+				<div className={styles['price']}>{props.price} $</div>
 			</div>
 			<div className={styles['actions']}>
 				<button className={styles['minus']} onClick={descrease}>
-					<img src="/minus-icon.svg" alt="Удалить из корзины" />
+					<img src="/minus-icon.svg" alt="alt" />
 				</button>
 				<div className={styles['number']}>{props.count}</div>
 				<button className={styles['plus']} onClick={increase}>
-					<img src="/plus-icon.svg" alt="Добавить в корзину" />
+					<img src="/plus-icon.svg" alt="alt" />
 				</button>
 				<button className={styles['remove']} onClick={remove}>
-					<img src="/delete-icon.svg" alt="Удалить все" />
+					<img src="/delete-icon.svg" alt="alt" />
 				</button>
 			</div>
 		</div>

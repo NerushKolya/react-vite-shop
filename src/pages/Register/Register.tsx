@@ -40,26 +40,26 @@ export function Register() {
 	};
 
 	return <div className={styles['login']}>
-		<Headling>Регистрация</Headling>
+		<Headling>Registration</Headling>
 		{registerErrorMessage && <div className={styles['error']}>{registerErrorMessage}</div>}
 		<form className={styles['form']} onSubmit={submit}>
 			<div className={styles['field']}>
-				<label htmlFor="email">Ваш email</label>
+				<label htmlFor="email">Email</label>
 				<Input id="email" name='email' placeholder='Email' />
 			</div>
 			<div className={styles['field']}>
-				<label htmlFor="password">Ваш пароль</label>
+				<label htmlFor="password">Password</label>
 				<Input id="password" name='password' type="password" placeholder='Пароль' />
 			</div>
 			<div className={styles['field']}>
-				<label htmlFor="name">Ваше имя</label>
+				<label htmlFor="name">Name</label>
 				<Input id="name" name='name' placeholder='Имя' />
 			</div>
-			<Button appearence="big">Зарегистрироваться</Button>
+			<Button appearence="big">Register</Button>
 		</form>
 		<div className={styles['links']}>
-			<div>Есть акканут?</div>
-			<Link to="/auth/login">Войти</Link>
+			<div>Do you have an account?</div>
+			<Link to="/auth/login">Login</Link>
 		</div>
 	</div>;
 }
